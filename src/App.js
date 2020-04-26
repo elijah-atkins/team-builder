@@ -6,13 +6,17 @@ import data from './components/data'
 import './App.scss';
 
 function App() {
-  console.log({ data });
+  
   const [memberToEdit, setMemberToEdit] = useState([]);
   const [teams, setTeams] = useState([{
     name: data.name,
     email: data.email,
     role: data.role
   }])
+  const editTeamMember = member => {
+    alert("Can't edit yet");
+
+  }
   const addNewTeamMember = member => {
     const newMember = {
       id: Date.now(),
@@ -22,13 +26,11 @@ function App() {
     }
     setTeams([...teams, newMember])
   }
-  const editMember = member => {
-    console.log(member)
-  }
+
   return (
     <div className="App">
-      <Form addNewTeamMember={addNewTeamMember} editMember={editMember}/>
-      <Teams teams={teams}/>
+      <Form addNewTeamMember={addNewTeamMember} />
+      <Teams teams={teams} editTeamMember={editTeamMember}/>
     </div>
 
   );

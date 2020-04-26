@@ -4,7 +4,7 @@ $background1: #ffca7a;
 $background2: #d79b41;
 $bg-upper: #e66465;
 $bg-lower: #580c9f;
-$bg-card: #c5f5f5;
+$bg-card: #d7f5c5;
 $black: #000;
 $button-bg: #4470a8;
 $button-border: #656fff;
@@ -32,8 +32,8 @@ body,
   color: $font;
   text-align: center;
   background-image: 
-            radial-gradient(ellipse at bottom left, rgba($bg-lower, 0.45), transparent),
-            radial-gradient(ellipse at top right, $bg-upper, transparent),
+            radial-gradient(ellipse at 33% 100%, rgba($bg-lower, 0.4), transparent),
+            radial-gradient(ellipse at 80% 15%, $bg-upper, transparent),
             linear-gradient(-37deg, $background1 20%, $background2 100%);
   padding: 0px;
   letter-spacing: 2px
@@ -45,7 +45,7 @@ body,
 }
 .team {
   background-image: linear-gradient(33deg, $bg-card 33%, darken($bg-card, 5%) 50%, $bg-card 100%);
-  box-shadow: 0 5px 10px rgba($black, 0.12), 0 5px 2px rgba($black, 0.24);
+  box-shadow: 7px 7px 15px rgba($black, 0.12), 5px 5px 5px rgba($black, 0.24);
   width: 100%;
   max-width: 350px;
   margin: 16px auto;
@@ -80,7 +80,7 @@ input, textarea {
 }
 button {
   background: $button-bg;
-  background-image: linear-gradient(-315deg, desaturate($button-bg, 5%) 20%, $button-bg 100%);
+  background-image: linear-gradient(-315deg, desaturate($button-bg, 1%) 20%, $button-bg 100%);
   border: 1px solid $button-border;
   padding: 10px 15px;
   font-size: clamp(1rem, 3vw, 1.6rem);
@@ -110,7 +110,6 @@ label {
 }
 
 .member-header {
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -119,7 +118,7 @@ label {
 }
 .member-name {
   padding: 7px;
-  background: rgba(desaturate($bg-card, 15%), .5);
+  background: rgba(desaturate($bg-card, 40%), .2);
   width: 100%;
   height: 30px;
 }
@@ -131,8 +130,8 @@ label {
   width: 80px;
   height: 30px;
 
-  background-color: rgba(desaturate($bg-card, 10%), .5);
+  background-color: rgba(desaturate($bg-card, 40%), .2);
   &:hover {
-    background-color: rgba(darken($bg-card, 30%), .5);
+    background-color: rgba(darken($bg-card, 60%), .2);
   }
 }
