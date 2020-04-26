@@ -1,0 +1,105 @@
+/* 
+Color Variables
+*/
+$background1: #ffca7a;
+$background2: #d79b41;
+$bg-upper: #e66465;
+$bg-lower: #580c9f;
+$bg-card: #ffff88;
+$black: #000;
+$button-bg: #4470a8;
+$button-border: #656fff;
+$button-grad1: #4e5a9c;
+$button-grad2: #3944ac;
+/*
+Fonts
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
+html,
+body,
+.App,
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: 'Lora', serif;
+  text-align: center;
+  background-image: 
+            radial-gradient(ellipse at top, $bg-upper, transparent),
+            radial-gradient(ellipse at bottom right, $bg-lower, transparent),
+            linear-gradient(75deg, $background1 40%, $background2 100%);
+  padding: 32px;
+  letter-spacing: 2px
+}
+.member-name {
+    padding: 10px;
+    background: lighten($bg-card, 10%);
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.team {
+  background: $bg-card;
+  box-shadow: 0 5px 10px rgba($black, 0.12), 0 5px 2px rgba($black, 0.24);
+  width: 100%;
+  max-width: 350px;
+  margin: 16px auto;
+  text-align: left;
+}
+.team p{
+    padding: 10px;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+input, textarea {
+  width: 300px;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;  
+  border: 1px solid $background2;
+  border-radius: 4px;
+}
+button {
+  background: $button-bg;
+  background-image: linear-gradient(-315deg, $button-grad1 40%, $button-grad2 100%);
+  border: 1px solid $button-border;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #e0dddd;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.12), 0 2px 2px 1px rgba(0, 0, 0, 0.24);
+  transition: all 0.2 ease-in;
+}
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.12), 0 2px 3px 2px rgba(0, 0, 0, 0.24);
+  background: $button-bg;
+}
+button:active {
+  background: $button-bg;
+  box-shadow: inset 0px 0px 5px darken($button-bg, 20%);
+  outline: none;
+}
+
+label {
+  margin-bottom: -8px;
+  text-align: left;
+  width: 280px;
+}
+

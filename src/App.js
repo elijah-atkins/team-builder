@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Form from './components/Form';
 import Teams from  './components/Teams';
 import data from './components/data'
-import './App.css';
+import './App.scss';
 
 function App() {
   console.log({ data });
