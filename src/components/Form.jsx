@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const TeamForm = ({ addNewTeam }) => {
+const TeamForm = ({ addNewTeamMember }) => {
 
-  const [team, setTeam] = useState({ title: "", body: "" });
+  const [team, setTeam] = useState({ name: "", email: "", role: ""});
   // This uses https://reactjs.org/docs/events.html#form-events
   const handleChanges = event => {
 
@@ -13,7 +13,7 @@ const TeamForm = ({ addNewTeam }) => {
 
   const submitForm = event => {
     event.preventDefault();
-    addNewTeam(team);
+    addNewTeamMember(team);
     setTeam({ name: "", email: "", role: "" });
   };
 
@@ -32,23 +32,23 @@ const TeamForm = ({ addNewTeam }) => {
       />
       <label htmlFor="email">E-mail</label>
 
-<input
-  id="email"
-  type="text"
-  placeholder="Enter E-mail"
-  value={team.email}
-  name="email"
-  onChange={handleChanges}
-/>      <label htmlFor="role">Role</label>
+      <input
+        id="email"
+        type="text"
+        placeholder="Enter E-mail"
+        value={team.email}
+        name="email"
+        onChange={handleChanges}
+      />      <label htmlFor="role">Role</label>
 
-<input
-  id="role"
-  type="text"
-  placeholder="Enter Role"
-  value={team.role}
-  name="role"
-  onChange={handleChanges}
-/>
+      <input
+        id="role"
+        type="text"
+        placeholder="Enter Role"
+        value={team.role}
+        name="role"
+        onChange={handleChanges}
+      />
       <button>Add Team Member</button>
     </form>
   );
