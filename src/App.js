@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 
 import Form from './components/Form';
 import Teams from  './components/Teams';
-
+import data from './components/data'
 import './App.css';
 
 function App() {
+  console.log({ data });
+  const [memberToEdit, setMemberToEdit] = useState([]);
   const [teams, setTeams] = useState([{
-    id: 1,
-    name: "Elijah Atkins",
-    email: "elijah-the-atkins@gmail.com",
-    role: "Web UI/React"
-}])
+    name: data.name,
+    email: data.email,
+    role: data.role
+  }])
   const addNewTeamMember = member => {
     const newMember = {
       id: Date.now(),
@@ -21,9 +22,12 @@ function App() {
     }
     setTeams([...teams, newMember])
   }
+  const editMember = member => {
+    console.log(member)
+  }
   return (
     <div className="App">
-      <Form addNewTeamMember={addNewTeamMember} />
+      <Form addNewTeamMember={addNewTeamMember} editMember={editMember}/>
       <Teams teams={teams}/>
     </div>
 

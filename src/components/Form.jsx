@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TeamForm = ({ addNewTeamMember }) => {
+const TeamForm = ({ addNewTeamMember, editMember }) => {
 
   const [team, setTeam] = useState({ name: "", email: "", role: ""});
   // This uses https://reactjs.org/docs/events.html#form-events
