@@ -1,6 +1,5 @@
-/* 
-Color Variables
-*/
+/* Color Variables */
+
 $background1: #ffca7a;
 $background2: #d79b41;
 $bg-upper: #e66465;
@@ -11,11 +10,11 @@ $button-bg: #4470a8;
 $button-border: #656fff;
 $button-grad1: #4e5a9c;
 $button-grad2: #3944ac;
-/*
-Fonts
-*/
+$light-font: #e0dddd;
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+/*Fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 html,
 body,
@@ -28,18 +27,19 @@ body,
 }
 
 .App {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   background-image: 
-            radial-gradient(ellipse at top, $bg-upper, transparent),
-            radial-gradient(ellipse at bottom right, $bg-lower, transparent),
-            linear-gradient(75deg, $background1 40%, $background2 100%);
-  padding: 32px;
+            radial-gradient(ellipse at bottom left, rgba($bg-lower, 0.40), transparent),
+            radial-gradient(ellipse at top right, $bg-upper, transparent),
+            linear-gradient(-45deg, $background1 40%, $background2 100%);
+  padding: 0px;
   letter-spacing: 2px
 }
 .member-name {
     padding: 10px;
-    background: lighten($bg-card, 10%);
+    background: desaturate($bg-card, 10%);
+    border-radius: 3px;
 }
 .team-list {
   display: flex;
@@ -51,17 +51,23 @@ body,
   width: 100%;
   max-width: 350px;
   margin: 16px auto;
+  margin-bottom: 0;
   text-align: left;
+  border-radius: 3px;
 }
 .team p{
     padding: 10px;
+    padding-bottom: 0;
 }
+
 
 h1,
 h2 {
   margin-top: 0;
 }
-
+label {
+  padding-top: 10px;
+}
 form {
   display: flex;
   flex-flow: column nowrap;
@@ -82,13 +88,14 @@ button {
   border: 1px solid $button-border;
   padding: 10px 15px;
   font-size: 16px;
-  color: #e0dddd;
-  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.12), 0 2px 2px 1px rgba(0, 0, 0, 0.24);
+  color: $light-font;
+  box-shadow: 0 2px 5px 1px rgba($black, 0.12), 0 2px 2px 1px rgba($black, 0.24);
   transition: all 0.2 ease-in;
+  border-radius: 5px;
 }
 button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.12), 0 2px 3px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 2px 6px 2px rgba($black, 0.12), 0 2px 3px 2px rgba($black, 0.24);
   background: $button-bg;
 }
 button:active {
