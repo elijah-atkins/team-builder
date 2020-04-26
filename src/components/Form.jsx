@@ -39,7 +39,8 @@ const TeamForm = ({ addNewTeamMember, editMember }) => {
         value={team.email}
         name="email"
         onChange={handleChanges}
-      />      <label htmlFor="role">Role</label>
+      />      
+      <label htmlFor="role">Role</label>
 
       <input
         id="role"
