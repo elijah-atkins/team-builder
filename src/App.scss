@@ -11,6 +11,7 @@ $button-border: #656fff;
 $button-grad1: #4e5a9c;
 $button-grad2: #3944ac;
 $light-font: #e0dddd;
+$font: #18181b;
 
 /*Fonts*/
 
@@ -28,11 +29,12 @@ body,
 
 .App {
   font-family: 'Roboto', sans-serif;
+  color: $font;
   text-align: center;
   background-image: 
-            radial-gradient(ellipse at bottom left, rgba($bg-lower, 0.40), transparent),
+            radial-gradient(ellipse at bottom left, rgba($bg-lower, 0.45), transparent),
             radial-gradient(ellipse at top right, $bg-upper, transparent),
-            linear-gradient(-45deg, $background1 40%, $background2 100%);
+            linear-gradient(-37deg, $background1 20%, $background2 100%);
   padding: 0px;
   letter-spacing: 2px
 }
@@ -84,7 +86,7 @@ input, textarea {
 }
 button {
   background: $button-bg;
-  background-image: linear-gradient(-315deg, $button-grad1 40%, $button-grad2 100%);
+  background-image: linear-gradient(-315deg, desaturate($button-bg, 5%) 20%, $button-bg 100%);
   border: 1px solid $button-border;
   padding: 10px 15px;
   font-size: 16px;
@@ -94,7 +96,7 @@ button {
   border-radius: 5px;
 }
 button:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1px) translateX(-1px);
   box-shadow: 0 2px 6px 2px rgba($black, 0.12), 0 2px 3px 2px rgba($black, 0.24);
   background: $button-bg;
 }
@@ -110,3 +112,22 @@ label {
   width: 280px;
 }
 
+.member-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.member-name {
+  width: 100%;
+  height: 100%;
+}
+.member-edit {
+  width: 80px;
+  height: 35px;
+  padding-top: 15px;
+  padding-left: 20px;
+  background-color: desaturate($bg-card, 10%);
+  &:hover {
+    background-color: darken($bg-card, 30%);
+  }
+}
