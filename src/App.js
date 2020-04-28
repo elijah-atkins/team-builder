@@ -9,12 +9,20 @@ function App() {
   
   const [memberToEdit, setMemberToEdit] = useState([]);
   const [teams, setTeams] = useState([{
+    id: Date.now(),
     name: data.name,
     email: data.email,
     role: data.role
   }])
-  const editTeamMember = member => {
-    alert("Can't edit yet");
+  const editTeamMember = (id) => {
+    console.log(id)
+    setTeams(member => {
+      return member.filter(
+        (teamMember) => {
+          return teamMember.id !== id;
+        }
+      )
+    })
 
   }
   const addNewTeamMember = member => {

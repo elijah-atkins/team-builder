@@ -11,8 +11,8 @@ const Teams = props => {
           <div className="member-header">
           <h2 className="member-name" >{team.name}</h2>
           <span className="member-edit" onClick={() => 
-            editTeamMember()
-          }>Edit</span>
+            editTeamMember(team.id)
+          }>Delete</span>
           </div>
           <p>{team.email}</p>
           <p>{team.role}</p>
